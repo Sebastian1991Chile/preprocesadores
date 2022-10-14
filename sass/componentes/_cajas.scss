@@ -1,0 +1,121 @@
+@use 'globales' as *;
+@use 'breakpoints' as *;
+
+.contenedor--cajas {
+	padding: 10px;
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 25px;
+}
+
+.caja {
+	max-width: 430px;
+	@include caja;
+	&__imagen {
+		img {
+			width: 100%;
+		}
+	}
+	&__contenido {
+		padding: 25px;
+		background-color: $color-claro;		
+	}
+	&__categoria {
+		color: $color-secundario;
+		@include titulos($Fuente2);
+	}
+}
+
+.contenedor--cajas .caja a {
+	text-decoration: none;	
+	color: $color-variacion;
+	@include titulos($Fuente2);
+}
+
+.contenido {
+	margin-bottom: 40px;
+	justify-content: center;
+	display: flex;
+	width: 90%;
+	margin: 0 auto 30px auto;
+	padding: 30px 0;
+	flex-wrap: wrap;
+	gap: 25px;
+} 
+
+.caja--con-fondo {
+	display: flex;
+	box-shadow: none;
+	position: relative;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: $color-primario;
+	img {
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		opacity: .5;
+		object-fit: cover;
+	}
+	&__contenido {
+		display: flex;
+		height: 100%;
+		padding: 20px;
+		width: 100%;
+		position: absolute;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		color: $color-claro;
+		@include media(desktop-l){
+			display: initial;
+			height: auto;
+			flex-direction: row;
+			justify-content:initial ;
+		}
+		p {
+			color: $color-claro;
+		}
+		h3 {
+			color: $color-claro
+		}
+	}
+	&__categoria {
+		display: block;
+		width: auto;
+		max-width: 100px;
+		margin: 0 auto;
+		text-align: center;
+		background-color: $color-secundario;
+		color: $color-claro;
+		@include titulos($Fuente2);
+	}
+}
+
+.caja--grande {
+	@include media(desktop-l){
+		max-width: 1000px;
+	}
+	h2 {
+		@include titulos($Fuente2);
+		@include font-size(35px);
+		@include media(mobile){
+			@include font-size(50px);
+		}
+	}
+	.caja--con-fondo__contenido {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+.caja--pequeña {
+	height: 250px;
+	max-width: 300px;
+}

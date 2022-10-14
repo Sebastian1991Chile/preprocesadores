@@ -1,0 +1,130 @@
+@use 'grids' as *;
+@use 'breakpoints' as *;
+
+.contenedor--home {
+    display: flex;
+    margin: 0 auto 30px auto;
+    padding: 0 10px 20px 10px;
+    max-width: 1300px;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    @include display-grid;
+    @include grid-template-columns(1fr);
+    @include grid-template-rows(1fr grid-repeat(16));
+    @include media(mobile){
+        padding: 0 20px 20px 20px;
+        @include grid-template-columns(1fr 1fr);
+        @include grid-template-rows(1fr grid-repeat(9));
+        @include media(desktop-l){
+            height:  1200px;
+            @include grid-template-columns(1fr grid-repeat(3));
+            @include grid-template-rows(1fr grid-repeat(3))
+        }
+    }
+}
+
+.caja--grande {
+    width: 100%;
+    @include grid-column(1, 2);
+    @include grid-row(1, 4);
+    @include media(mobile){
+        @include grid-column(1, 3);
+        @include grid-row(1, 3);
+        @include media(desktop-l){
+            @include grid-column(1, 4);
+            @include grid-row(1, 3);
+        }
+    }
+}
+
+.sidebar--listado {
+    @include grid-column(1, 2);
+    @include grid-row(4, 6);
+    @include media(mobile){
+        @include grid-column(1, 2);
+        @include grid-row(3, 5);
+        @include media(desktop-l){
+            @include grid-column(1, 2);
+            @include grid-row(3, 5);
+        }
+    }
+}
+
+.caja-rdr2 {
+    @include grid-column(1, 2);
+    @include grid-row(6, 8);
+    @include media(mobile){
+        @include grid-column(2, 3);
+        @include grid-row(3, 5);
+        @include media(desktop-l){
+            @include grid-column(4, 5);
+            @include grid-row(1, 2);
+        }
+    }
+}
+
+.caja-zelda {
+    @include grid-column(1, 2);
+    @include grid-row(8, 10);
+    @include media(mobile){
+        @include grid-column(1, 3);
+        @include grid-row(5, 7);
+        @include media(desktop-l){
+            @include grid-column(2, 4);
+            @include grid-row(3, 4);
+        }
+    }
+}
+
+.banner--homepage {
+    @include grid-column(1, 2);
+    @include grid-row(10, 12);
+    @include media(mobile){
+        @include grid-column(1, 2);
+        @include grid-row(7, 9);
+        @include media(desktop-l){
+            @include grid-column(4, 5);
+            @include grid-row(2, 4);
+        }
+    }
+}
+
+.caja-ff {
+    @include grid-column(1, 2);
+    @include grid-row(12, 14);
+    @include media(mobile){
+        @include grid-column(2, 3);
+        @include grid-row(7, 9);
+        @include media(desktop-l){
+            @include grid-column(2, 3);
+            @include grid-row(4, 5);
+        }
+    }
+}
+
+.caja-xbox {
+    @include grid-column(1, 2);
+    @include grid-row(14, 16);
+    @include media(mobile){
+        @include grid-column(2, 3);
+        @include grid-row(9, 11);
+        @include media(desktop-l){
+            @include grid-column(3, 4);
+            @include grid-row(4, 5);
+        }
+    }
+}
+
+.caja-fortnite {
+    @include grid-column(1, 2);
+    @include grid-row(16, 18);
+    @include media(mobile){
+        @include grid-column(1, 2);
+        @include grid-row(9, 11);
+        @include media(desktop-l){
+            @include grid-column(4, 5);
+            @include grid-row(4, 5);
+        }
+    }
+}

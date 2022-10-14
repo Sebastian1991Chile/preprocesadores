@@ -1,0 +1,33 @@
+@use 'globales' as *;
+
+.galeria {
+	max-width: 275px;
+	margin: 10px auto;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border-radius: 20px;
+	background-color: $color-claro;
+	@include caja;
+	&__foto-principal img {
+		width: 100%;
+	}
+	&__fotos-adicionales {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	h2 {
+		font-weight: 600;
+		font-size: 20px;	
+		// incluir aca
+		@include titulos($Fuente2);
+	}		
+	img {
+		border-radius: 10px;
+	}
+}
+
+
+	

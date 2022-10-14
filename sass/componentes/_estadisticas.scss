@@ -1,0 +1,80 @@
+@use 'globales' as *;
+@use 'breakpoints' as *;
+
+.estadistica--perfil {
+	display: flex;
+	max-width: 275px;
+	height: 80px;
+	padding-top: 15px;
+	margin: 0 auto;
+	justify-content: space-around;
+	border-radius: 20px;
+	background-color: $color-claro;
+	@include caja;
+	h3 {
+		font-weight: 600;
+		font-size: 20px;
+		text-align: center;
+		@include titulos($Fuente2);
+	}
+	span {
+		font-size: 12px;
+		text-align: center;
+		color: get-opacity($color-primario, .5);
+		@include titulos($Fuente2);
+	}
+}
+
+.estadistica--articulos {
+	height: 70px;
+	padding: 20px;
+	border-top: 1px solid #E9E9E9;
+	
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		justify-content: space-evenly;
+	}
+		li {
+			list-style: none;
+			color: get-opacity($color-primario, .20);
+		}
+			span  {
+			margin-left: 10px;
+		}
+	}
+
+.caja--con-fondo__stats {
+	max-width: 250px;
+	width: 100%;
+	align-self: center;
+	position: absolute;
+	bottom: 10px;
+	border-top: none;
+	@include media(mobile){
+		margin-left: 20px;
+		align-self: baseline;
+		@include media(desktop-l){
+			max-width: 250px;
+		}
+	}
+	ul {
+		display: flex;
+		padding-left: 0;
+		width: 100%;
+		justify-content: space-around;
+	}
+	li {
+		display: flex;
+		align-items: center;
+		opacity: .8;
+	}
+	i {
+		color: $color-claro;
+	}
+	span {
+		margin-left: 10px;
+		color: $color-claro;
+	}
+}

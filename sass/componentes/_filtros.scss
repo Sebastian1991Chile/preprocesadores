@@ -1,0 +1,44 @@
+@use 'globales' as *;
+@use 'breakpoints' as *;
+
+.encabezado--con-filtros {
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+	padding: 30px 0;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+	@include media(mobile){
+        flex-wrap: nowrap;
+		gap: 0;
+    }
+	h2 {
+		width: 100%;
+		text-align: center;
+		@include titulos($Fuente2);
+		@include font-size(30px);
+		@include media(mobile){
+			width: 60%;
+			text-align: left;
+		}
+	}
+	.filtros {
+		height: 60px;
+		padding: 20px;
+		margin: 0 auto;
+		@include caja;
+		@include media(mobile){
+			margin-left: auto;
+		}
+	}
+		span {
+			@include titulos($Fuente2);
+		}
+		a {
+			margin-left: 20px;
+			color: #ccc;
+			font-size: 20px;
+		}
+}
